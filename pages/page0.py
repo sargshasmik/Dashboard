@@ -8,7 +8,7 @@ import pandas_datareader.data as web
 import datetime
 import plotly.graph_objects as go
 import plotly.express as px
-
+from dash import dcc, html, Input, Output, callback, dash_table
 
 dash.register_page(__name__,
                    path="/",
@@ -31,6 +31,18 @@ layout = dbc.Container([
                 width=6
             )
         ]
+    ), 
+    dbc.Row(
+        dbc.Col(
+            dash_table.DataTable(
+                id='data-table',
+                columns=[{"name": i, "id": i} for i in df.columns],
+                data=df.head().to_dict('records'),
+                style_table={'overflowX': 'auto'},
+                style_cell={'textAlign': 'left'}
+            ),
+            width=12
+        )
     )
 ])
 
