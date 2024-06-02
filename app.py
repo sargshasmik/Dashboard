@@ -8,7 +8,7 @@ import pandas_datareader.data as web
 import datetime
 import plotly.graph_objects as go
 import plotly.express as px
-from python_pgfutter_importer import app as application
+
 
 app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SPACELAB])
 
