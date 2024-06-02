@@ -1,5 +1,11 @@
-dash
+dash = 2.16.1
+dash-core-components
+dash-html-components
+dash-table
+Flask
 pandas
+pandas-datareader
+numpy
 plotly
 gunicorn
 dash-bootstrap-components==1.2.1
